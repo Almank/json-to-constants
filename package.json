@@ -3,9 +3,12 @@
 	"displayName": "JSON to CONSTANTS",
 	"description": "Convert your JSON struct to constant variables.",
 	"version": "0.0.1",
+	"publisher": "Almank",
 	"engines": {
-		"vscode": "^1.48.0"
+		"vscode": "^1.49.0"
 	},
+	"repository": "https://github.com/Almank/json-to-constants",
+	"homepage": "https://github.com/Almank/json-to-constants",
 	"categories": [
 		"Other"
 	],
