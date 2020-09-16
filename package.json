@@ -8,7 +8,7 @@
 		"vscode": "^1.49.0"
 	},
 	"repository": "https://github.com/Almank/json-to-constants",
-	"homepage": "https://github.com/Almank/json-to-constants",
+	"homepage": "https://marketplace.visualstudio.com/items?itemName=Almank.json-to-constants&ssr=false#overview",
 	"categories": [
 		"Other"
 	],
