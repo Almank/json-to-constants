@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
       const text = editor.document.getText(selection);
       const jsonObject = JSON.parse(text);
       const newText = createNewText(jsonObject);
-      replaceAllTextWithConstants(newText, editor);
+      addTextToClipboard(newText);
     }
   );
 
@@ -84,27 +84,16 @@ const createNewText = (jsonObject: any) => {
     const type = getTypeOfElement(jsonObject[key]);
 
     if (!["string", "number", "boolean", "null"].includes(type.toString())) {
-      return `const ${key.toUpperCase()} = ${makeObject(jsonObject[key])};\n`;
+      return `const ${key} = ${makeObject(jsonObject[key])};\n`;
     }
-    return `const ${key.toUpperCase()} = ${getFormattingForType(
+    return `const ${key} = ${getFormattingForType(
       jsonObject[key]
     )};\n`;
   });
 };
 
-const replaceAllTextWithConstants = (text: string[], editor: any) => {
-  const firstLine = editor.document.lineAt(0);
-  const lastLine = editor.document.lineAt(editor.document.lineCount - 1);
-  const textRange = new vscode.Range(
-    0,
-    firstLine.range.start.character,
-    editor.document.lineCount - 1,
-    lastLine.range.end.character
-  );
-
-  editor.edit(function (editBuilder: any) {
-    editBuilder.replace(textRange, text.join(""));
-  });
+const addTextToClipboard = (text: string[]) => {
+  vscode.env.clipboard.writeText(text.join(""));
 };
 
 export function deactivate() {}
