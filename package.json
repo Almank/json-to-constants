@@ -2,7 +2,7 @@
 	"name": "json-to-constants",
 	"displayName": "JSON to CONSTANTS",
 	"description": "Convert your JSON struct to constant variables.",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "Almank",
 	"icon": "./icon.png",
 	"engines": {
