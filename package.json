@@ -4,7 +4,7 @@
 	"description": "Convert your JSON struct to constant variables.",
 	"version": "1.0.0",
 	"publisher": "Almank",
-	"icon": "./icon.png",
+	"icon": "icon.png",
 	"engines": {
 		"vscode": "^1.49.0"
 	},
